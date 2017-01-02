@@ -1,0 +1,3 @@
+algo_job_files: [output/Algo_job_1.sh, output/Algo_job_2.sh, output/Algo_job_3.sh]
+datasplit_job_files: [output/Split_data_job_1.sh, output/Split_data_job_2.sh]
+metric_job_files: [output/Metric_job_1.sh, output/Metric_job_2.sh]

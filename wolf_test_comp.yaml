@@ -1,0 +1,41 @@
+cluster_config:
+    email: "jhuan@ku.edu"
+datasplit:
+    executable: "Splitingdata.py"
+    no_of_files: 1
+    data_file: "diabetes.arff"
+    output_folder: "output"
+    parameters:
+    - ["collection","list",-k,[5]]
+    - ["single",-r,2]
+    - ["single",-l,"class"]
+
+feature_extraction:
+    algo1:
+        executable: "PCA.py"
+        parameters:
+            - ["collection","list",-n,[10]]
+            - ["single",-c,True]
+            - ["single",-w,False]
+    no_of_files: 1
+
+feature_selection:
+    algo1:
+        executable: "SVM_RFE.py"
+    no_of_files: 1
+
+algorithm:
+    algo1:
+        executable: "RandomForest.py"
+        parameters:
+            - ["single",-d,5]
+            - ["single",-t,50]
+    algo2:
+        executable: "LinearSupportVectorClassification.py"
+    algo3:
+        executable: "LogisticRegression.py"
+    no_of_files: 1
+
+metric_calculation:
+    no_of_files: 1
+    executable: "MetricCollection.py"
